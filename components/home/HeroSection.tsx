@@ -31,7 +31,7 @@ export function HeroSection() {
     return (
         <>
             <HeroHeader />
-            <main className="overflow-hidden">
+            <div className="overflow-hidden">
                 <div
                     aria-hidden
                     className="absolute inset-0 isolate hidden opacity-65 contain-strict lg:block">
@@ -173,17 +173,17 @@ export function HeroSection() {
                                 <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1">
                                     <Image
                                         className="bg-background aspect-15/8 relative hidden rounded-2xl dark:block"
-                                        src="/mail2.png"
+                                        src="/cards-dark.png"
                                         alt="app screen"
-                                        width="2700"
-                                        height="1440"
+                                        width="1280"
+                                        height="1214"
                                     />
                                     <Image
                                         className="z-2 border-border/25 aspect-15/8 relative rounded-2xl border dark:hidden"
-                                        src="/mail2-light.png"
+                                        src="/cards-light.png"
                                         alt="app screen"
-                                        width="2700"
-                                        height="1440"
+                                        width="1280"
+                                        height="1214"
                                     />
                                 </div>
                             </div>
@@ -279,7 +279,7 @@ export function HeroSection() {
                         </div>
                     </div>
                 </section>
-            </main>
+            </div>
         </>
     )
 }
