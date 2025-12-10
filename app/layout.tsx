@@ -268,31 +268,31 @@ export default function RootLayout({
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
+          suppressHydrationWarning
         >
-          <Analytics />
-          <LinkPrefetch />
+          <PostHogProvider>
+            <Analytics />
+            <LinkPrefetch />
 
-          {/* <div className="bg-gradient-to-b from-blue-500 to-blue-600 px-4 py-3 text-left font-sans text-base font-medium tracking-tight text-white md:text-center">
-            <Link
-              href="/docs/profile"
-              className="flex items-center justify-center"
-            >
-              ✨ Introducing Spectrum CLI – Your favorite UI blocks, now just
-              one command away.
-              <ChevronRight className=" h-4 w-4 mt-1 ml-2 " />
-            </Link>
-          </div> */}
+            {/* <div className="bg-gradient-to-b from-blue-500 to-blue-600 px-4 py-3 text-left font-sans text-base font-medium tracking-tight text-white md:text-center">
+              <Link
+                href="/docs/profile"
+                className="flex items-center justify-center"
+              >
+                ✨ Introducing Spectrum CLI – Your favorite UI blocks, now just
+                one command away.
+                <ChevronRight className=" h-4 w-4 mt-1 ml-2 " />
+              </Link>
+            </div> */}
 
-          <SiteHeader />
-          <main className="flex flex-1 flex-col">
-            {" "}
-            <PostHogProvider>{children}</PostHogProvider>
-          </main>
-          <CrispChat />
+            <SiteHeader />
+            <main className="flex flex-1 flex-col">{children}</main>
+            <CrispChat />
 
-          <Toaster />
-          <Cta />
-          <Footer />
+            <Toaster />
+            <Cta />
+            <Footer />
+          </PostHogProvider>
         </ThemeProvider>
         <SpeedInsights />
       </body>
