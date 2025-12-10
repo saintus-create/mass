@@ -1,8 +1,7 @@
 'use client';
 import type { CSSProperties } from 'react';
 import Image from 'next/image';
-import HomeCardCollection from '@/components/homecard';
-import { HeroSection } from '@/components/home';
+import { HeroSection, BlogSection, FeaturedCarousel } from '@/components/home';
 
 
 const Homepage = () => {
@@ -12,6 +11,8 @@ const Homepage = () => {
 
       <HeroSection />
     </div>
+
+      <FeaturedCarousel />
 
       <div className="container-wrapper">
         <div className="container py-6">
@@ -40,8 +41,10 @@ const Homepage = () => {
             />
           </section>
        
+      <div className="container-wrapper">
+        <div className="container py-6">
           <section
-            className="hidden md:block  [&>div]:p-0 "
+            className="hidden md:block [&>div]:p-0"
             style={{
               '--radius': '1rem',
             } as CSSProperties}
@@ -49,13 +52,18 @@ const Homepage = () => {
             <div className="flex flex-col justify-center items-center my-12">
               <div className="px-8 rounded-2xl text-center">
                 <h2 className="font-bold text-2xl md:text-4xl mb-4 tracking-tight text-neutral-900 dark:text-white">
-                  Ready-to-Use UI Blocks
+                  Latest Insights
                 </h2>
+                <p className="text-muted-foreground text-lg">
+                    Discover trends, stories, and technical deep dives.
+                </p>
               </div>
             </div>
 
-            <HomeCardCollection />
+            <BlogSection />
           </section>
+        </div>
+      </div>
         </div>
       </div>
     </>

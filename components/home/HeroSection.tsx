@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 import { TextEffect } from '@/components/motion-primitives/text-effect'
 import { AnimatedGroup } from '@/components/motion-primitives/animated-group'
-import { HeroHeader } from '@/components/hero-header'
+import { HeroHeader } from "@/components/hero-header"
 
 const transitionVariants = {
     item: {
@@ -30,6 +30,7 @@ const transitionVariants = {
 export function HeroSection() {
     return (
         <>
+            <HeroHeader />
             <main className="overflow-hidden">
                 <div
                     aria-hidden
@@ -103,16 +104,14 @@ export function HeroSection() {
                                 </AnimatedGroup>
 
                                 <TextEffect
-                                    preset="fade-in-blur"
-                                    speedSegment={0.3}
+                                    preset="blur"
                                     as="h1"
                                     className="mx-auto mt-8 max-w-4xl text-balance text-5xl max-md:font-semibold md:text-7xl lg:mt-16 xl:text-[5.25rem]">
                                     Modern Solutions for Customer Engagement
                                 </TextEffect>
                                 <TextEffect
                                     per="line"
-                                    preset="fade-in-blur"
-                                    speedSegment={0.3}
+                                    preset="blur"
                                     delay={0.5}
                                     as="p"
                                     className="mx-auto mt-8 max-w-2xl text-balance text-lg">

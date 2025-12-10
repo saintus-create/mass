@@ -3,9 +3,6 @@ import { cn } from '@/lib/utils';
 import {
   AnimatePresence,
   motion,
-  TargetAndTransition,
-  Transition,
-  Variant,
   Variants,
 } from 'framer-motion';
 import React from 'react';
@@ -131,14 +128,14 @@ export function TextEffect({
             initial='hidden'
             animate='visible'
             exit='exit'
-            variants={variants?.container || presets[preset || 'fade'].container}
+            variants={variants?.container || (presets[preset || 'fade'] || presets['fade']).container}
             className={className}
             onAnimationComplete={onAnimationComplete}
           >
             {lines.map((line, index) => (
               <motion.span
                 key={index}
-                variants={variants?.item || presets[preset || 'fade'].item}
+                variants={variants?.item || (presets[preset || 'fade'] || presets['fade']).item}
                 className={cn('block', segmentWrapperClassName)}
               >
                 {line}
@@ -157,21 +154,21 @@ export function TextEffect({
           initial='hidden'
           animate='visible'
           exit='exit'
-          variants={variants?.container || presets[preset || 'fade'].container}
+          variants={variants?.container || (presets[preset || 'fade'] || presets['fade']).container}
           className={cn('whitespace-pre-wrap', className)}
           onAnimationComplete={onAnimationComplete}
         >
           {words.map((word, wordIndex) => (
             <motion.span
               key={wordIndex}
-              variants={variants?.item || presets[preset || 'fade'].item}
+              variants={variants?.item || (presets[preset || 'fade'] || presets['fade']).item}
               className='inline-block'
             >
               {per === 'char'
                 ? word.split('').map((char, charIndex) => (
                     <motion.span
                       key={`char-${wordIndex}-${charIndex}`}
-                      variants={variants?.item || presets[preset || 'fade'].item}
+                      variants={variants?.item || (presets[preset || 'fade'] || presets['fade']).item}
                     >
                       {char}
                     </motion.span>
