@@ -1,4 +1,3 @@
-'use client';
 import type { CSSProperties } from 'react';
 import Image from 'next/image';
 import { HeroSection, BlogSection, FeaturedCarousel } from '@/components/home';
